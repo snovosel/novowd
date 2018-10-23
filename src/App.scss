@@ -1,17 +1,11 @@
-.container {
-  @media screen and (min-width: 1400px) {
-    .container {
-      width: 1370px;
-    }
-  }
-  @media screen and (min-width: 1600px) {
-    .container {
-      width: 1570px;
-    }
-  }
-  @media screen and (min-width: 1900px) {
-    .container {
-      width: 1870px;
-    }
-  }
+.app-container {
+  background-color: rgba(#58A4B0, 0.7);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }

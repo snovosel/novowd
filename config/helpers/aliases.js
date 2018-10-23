@@ -9,4 +9,5 @@ module.exports = {
   Layout: path.resolve(__dirname, `${rootDir}/components/Layout`),
   Index: path.resolve(__dirname, `${rootDir}/components/Index`),
   Landing: path.resolve(__dirname, `${rootDir}/Landing`),
+  Styles: path.resolve(__dirname, `${rootDir}/styles`),
 };

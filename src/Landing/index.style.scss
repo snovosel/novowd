@@ -1,3 +1,8 @@
-.landing-container {
+@import 'src/styles/mixins.scss';
+
+.landing {
+  height: 100%;
   width: 100%;
+
+  @include make_flex(column, center, center);
 }

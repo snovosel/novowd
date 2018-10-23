@@ -9,14 +9,14 @@ class Card extends Component {
     const { styleType } = this.props;
 
     return (
-      <div styleName={`container ${styleType}`} ></div>
+      <div styleName={`card-container ${styleType}`} ></div>
     );
   }
 
 }
 
 Card.defaultProps = {
-  styleType: '',
+  styleType: 'medium solid',
 };
 
 const CardStyled = CSSModules(Card, styles, {

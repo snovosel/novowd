@@ -1,10 +1,17 @@
 @import '../../../styles/variables.scss';
 
-
-.container {
-  border: 0.5px solid $color-grayscale-7;
+.card-container {
   border-radius: 3px;
-  background-color: $color-secondary-6;
+
+  &.opaque {
+    border: 0.5px solid $color-grayscale-3;
+    background-color: $color-primary-6;
+  }
+
+  &.solid {
+    border: 0.5px solid $color-grayscale-3;
+    background-color: $color-primary;
+  }
 
   &.tall {
     height: 800px;
