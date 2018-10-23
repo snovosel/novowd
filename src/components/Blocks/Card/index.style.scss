@@ -3,8 +3,6 @@
 
 .container {
   border: 0.5px solid $color-grayscale-7;
-  height: 500px;
-  width: 500px;
   border-radius: 3px;
   background-color: $color-secondary-6;
 
@@ -14,6 +12,21 @@
 
   &.wide {
     width: 1000px;
+  }
+
+  &.small {
+    height: 100px;
+    width: 100px;
+  }
+
+  &.medium {
+    height: 250px;
+    width: 250px;
+  }
+
+  &.large {
+    height: 500px;
+    width: 500px;
   }
 
   &:hover {
