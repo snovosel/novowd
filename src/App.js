@@ -10,10 +10,12 @@ import styles from './App.scss';
 class App extends Component {
   render() {
     return (
+      <div styleName="container">
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route path="/components" component={ComponentLibrary} />
       </Switch>
+      </div>
     );
   }
 }

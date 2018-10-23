@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import { addCount } from './ducks.js';
 import { bindActionCreators } from 'redux';
 
+import Card from "Blocks/Card/index.jsx";
+
 const mapStateToProps = ({
   landing: {
     count,
@@ -34,13 +36,7 @@ export class Landing extends Component {
 
   render() {
     return (
-      <div>
-        <Link to="/components">Components</Link>
-        <br />
-        <h3>Redux</h3>
-        <p>{this.props.count}</p>
-        <button onClick={this.handleClick}>Add Count</button>
-      </div>
+      <Card />
     );
   }
 }
