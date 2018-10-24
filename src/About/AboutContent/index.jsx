@@ -12,11 +12,11 @@ class AboutContent extends Component {
   render() {
     return (
       <div styleName="content">
-        <div styleName="back">
-          <Link to="/">
+        <Link to="/">
+          <div styleName="back">
             <FaArrowLeft size="40" color="#74b4be"  />
-          </Link>
-        </div>
+          </div>
+        </Link>
         <div styleName="fixed">
           <FaChessPawn size="700" color="#74b4be" />
         </div>
