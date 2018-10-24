@@ -70,7 +70,10 @@ class LandingContent extends Component {
         <div styleName="menu-options">
           {menuOptions.map(({ Icon, title }) => (
             <div key={title} styleName={`menu-item`}>
-              <Card title={title} color={this.state.id === title ? 'white' : '#e5fff9'} >
+              <Card
+                title={title}
+                color={this.state.id === title ? 'white' : '#e5fff9'}
+              >
                 {this.renderIcon(Icon, title)}
               </Card>
             </div>
