@@ -4,12 +4,13 @@ import CSSModules from 'react-css-modules';
 import styles from './index.style.scss';
 
 class Card extends Component {
-
   render() {
-    const { styleType } = this.props;
+    const { styleType, color } = this.props;
 
     return (
-      <div styleName={`card-container ${styleType}`} ></div>
+      <div styleName={`card-container ${styleType}`} style={{backgroundColor: color}}>
+        {this.props.children}
+      </div>
     );
   }
 
@@ -17,6 +18,7 @@ class Card extends Component {
 
 Card.defaultProps = {
   styleType: 'medium solid',
+  color: '#e5fff9'
 };
 
 const CardStyled = CSSModules(Card, styles, {

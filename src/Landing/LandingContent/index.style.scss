@@ -8,20 +8,24 @@
   align-content: center;
 
   .header {
-    height: 20%;
-    flex: 1;
+    height: 25%;
+    flex: 3;
     font-size: 30px;
     color: white;
+    text-align: center;
+
+    @include make_flex(column, center, center);
+  }
+
+  .buffer {
+    flex: 1;
   }
 
   .menu-options {
     flex: 9;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    align-content: center;
+    @include make_flex(row, space-around, flex-start);
 
-    .landing-item {
+    .menu-item {
       margin-left: 25px;
       margin-right: 25px;
     }

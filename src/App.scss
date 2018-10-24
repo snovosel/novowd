@@ -1,11 +1,11 @@
+@import './styles/mixins.scss';
+
 .app-container {
-  background-color: rgba(#58A4B0, 0.7);
+  background-color: rgba(#74b4be, 0.8);
+  // background-color: rgba(#63abb6, 0.8);
   height: 100%;
   width: 100%;
   position: absolute;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
+  @include make_flex(row, center, center);
 }
