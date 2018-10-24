@@ -10,6 +10,12 @@
 
   @include make_flex(column, center, center);
 
+  .back {
+    height: 5%;
+    width: 90%;
+
+  }
+
   .list {
     height: 17%;
     width: 70%;
@@ -19,6 +25,6 @@
   .bio {
     height: 60%;
     width: 70%;
-    text-align: center;
+    text-align: justify;
   }
 }
