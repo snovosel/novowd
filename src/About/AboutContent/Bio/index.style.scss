@@ -1,0 +1,24 @@
+@import 'src/styles/mixins.scss';
+
+.info {
+  @include make_flex(column, center, center);
+  width: 100%;
+  margin-top: 6%;
+
+  .list {
+    height: 17%;
+    width: 70%;
+    text-align: left;
+    margin-bottom: 2%;
+  }
+
+  .bio {
+    width: 70%;
+    text-align: justify;
+    margin-top: 20px;
+
+    .contact {
+      color: white;
+    }
+  }
+}

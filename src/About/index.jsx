@@ -11,7 +11,7 @@ export class About extends Component {
   render() {
     return (
       <div styleName="about">
-        <Header styleType="" title="About" />
+        <Header title="About" />
         <AboutContent />
       </div>
     );

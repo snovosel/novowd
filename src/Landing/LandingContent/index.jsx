@@ -56,10 +56,7 @@ class LandingContent extends Component {
 
   renderIcon(IconComponent, title) {
     return (
-      <div onMouseEnter={() => this.handleMouseEnter(title)} onMouseLeave={() => {this.handleMouseLeave()}}>
-        <IconComponent color={this.state.id === title ? "#b66363" : "#74b4be"} />
-      </div>
-
+      <IconComponent color={this.state.id === title ? "#b66363" : "#74b4be"} />
     );
   }
 
@@ -72,7 +69,7 @@ class LandingContent extends Component {
         <div styleName="buffer" />
         <div styleName="menu-options">
           {menuOptions.map(({ Icon, title, path }) => (
-            <div key={title} styleName={`menu-item`}>
+            <div key={title} styleName={`menu-item`} onMouseEnter={() => this.handleMouseEnter(title)} onMouseLeave={() => {this.handleMouseLeave()}}>
               <Link to={path}>
                 <Card
                   title={title}
