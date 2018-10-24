@@ -1,0 +1,8 @@
+@import 'src/styles/mixins.scss';
+
+.about {
+  height: 100%;
+  width: 100%;
+
+  @include make_flex(column, center, center);
+}

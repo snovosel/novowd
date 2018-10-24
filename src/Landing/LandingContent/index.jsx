@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CSSModules from 'react-css-modules';
 import Card from "Blocks/Card/index.jsx";
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import {
   FaChessPawn,
@@ -15,14 +15,17 @@ const menuOptions = [
   {
     title: 'About',
     Icon: ({color}) => <FaChessPawn size="130" color={color} />,
+    path: '/about'
   },
   {
     title: 'Projects',
     Icon: ({color}) => <FaCode size="130" color={color} />,
+    path: '/projects'
   },
   {
     title: 'Contact',
     Icon: ({color}) => <FaEnvelope size="130" color={color} />,
+    path: '/contact'
   }
 ];
 
@@ -68,14 +71,16 @@ class LandingContent extends Component {
         </div>
         <div styleName="buffer" />
         <div styleName="menu-options">
-          {menuOptions.map(({ Icon, title }) => (
+          {menuOptions.map(({ Icon, title, path }) => (
             <div key={title} styleName={`menu-item`}>
-              <Card
-                title={title}
-                color={this.state.id === title ? 'white' : '#e5fff9'}
-              >
-                {this.renderIcon(Icon, title)}
-              </Card>
+              <Link to={path}>
+                <Card
+                  title={title}
+                  color={this.state.id === title ? 'white' : '#e5fff9'}
+                >
+                  {this.renderIcon(Icon, title)}
+                </Card>
+              </Link>
             </div>
           ))}
         </div>
