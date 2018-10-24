@@ -1,10 +1,34 @@
 @import 'src/styles/mixins.scss';
+@import 'src/styles/variables.scss';
 
 .content {
   height: 100%;
   width: 100%;
   font-size: 30px;
   color: white;
+
+  @include make_flex(column, center, center);
+
+  .back {
+    top: 13%;
+    left: 2%;
+    position: fixed;
+    border-radius: 3px;
+    padding: 0.6% 1.3%;
+    border: 0.5px solid $color-grayscale-3;
+    background-color: $color-primary-6;
+    z-index: 20;
+
+    @include make_flex(column, center, center);
+
+    &:hover {
+      background-color: rgba(white, 0.6);
+    }
+
+    & > a {
+      @include make_flex(column, center, center);
+    }
+  }
 
   .fixed {
     height: 80%;
@@ -18,9 +42,11 @@
   }
 
   .scroll {
-    // height: 100%;
     width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    padding-bottom: 12%;
   }
-
-
 }

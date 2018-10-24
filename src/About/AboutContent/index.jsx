@@ -12,6 +12,11 @@ class AboutContent extends Component {
   render() {
     return (
       <div styleName="content">
+        <div styleName="back">
+          <Link to="/">
+            <FaArrowLeft size="40" color="#74b4be"  />
+          </Link>
+        </div>
         <div styleName="fixed">
           <FaChessPawn size="700" color="#74b4be" />
         </div>
@@ -22,25 +27,6 @@ class AboutContent extends Component {
     );
   }
 }
-
-//
-//
-
-
-// <div styleName="water-mark">
-//
-// </div>
-// <div styleName="back">
-//   <Link to="/">
-//     <FaArrowLeft size="52" color="white" />
-//   </Link>
-// </div>
-
-// .back {
-//   height: 5%;
-//   width: 90%;
-// }
-
 
 const AboutContentStyled = CSSModules(AboutContent, styles, {
   allowMultiple: true

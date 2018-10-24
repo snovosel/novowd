@@ -30,3 +30,7 @@ background: none; /* WebKit/Blink Browsers */
 ::-moz-selection {
   background: none; /* Gecko Browsers */
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
