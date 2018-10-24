@@ -54,7 +54,7 @@ class LandingContent extends Component {
   renderIcon(IconComponent, title) {
     return (
       <div onMouseEnter={() => this.handleMouseEnter(title)} onMouseLeave={() => {this.handleMouseLeave()}}>
-        <IconComponent color={this.state.id === title ? "#be7499" : "#74b4be"} />
+        <IconComponent color={this.state.id === title ? "#b66363" : "#74b4be"} />
       </div>
 
     );
@@ -69,8 +69,8 @@ class LandingContent extends Component {
         <div styleName="buffer" />
         <div styleName="menu-options">
           {menuOptions.map(({ Icon, title }) => (
-            <div key={title} styleName="menu-item">
-              <Card title={title} color={this.state.id === title ? 'white' : '#e5fff9'}>
+            <div key={title} styleName={`menu-item`}>
+              <Card title={title} color={this.state.id === title ? 'white' : '#e5fff9'} >
                 {this.renderIcon(Icon, title)}
               </Card>
             </div>

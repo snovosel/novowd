@@ -8,7 +8,7 @@ class Card extends Component {
     const { styleType, color } = this.props;
 
     return (
-      <div styleName={`card-container ${styleType}`} style={{backgroundColor: color}}>
+      <div styleName={`card-container ${styleType}`} style={{backgroundColor: color} }>
         {this.props.children}
       </div>
     );
