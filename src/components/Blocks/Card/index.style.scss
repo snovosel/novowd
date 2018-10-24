@@ -18,7 +18,12 @@
   }
 
   &.tall {
-    height: 800px;
+    &-6 {
+      height: 600px;
+    }
+    &-8 {
+      height: 800px;
+    }
   }
 
   &.wide {
