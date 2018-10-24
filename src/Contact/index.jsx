@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
 import CSSModules from 'react-css-modules';
 
-import styles from './index.style.scss';
+import ContactContent from "./ContactContent/index.jsx";
 
-class Contact extends Component {
+import Header from "Layout/Header/index.jsx";
+
+import styles from "./index.style.scss";
+
+export class Contact extends Component {
   render() {
     return (
-      <div>contact page</div>
+      <div styleName="contact">
+        <Header title="Contact" />
+        <ContactContent />
+      </div>
     );
   }
-
 }
 
-const ContactStyled = CSSModules(Contact, styles, {
-  allowMultiple: true,
-});
+const ContactStyled = CSSModules(Contact, styles);
 
 export default ContactStyled;
