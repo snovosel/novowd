@@ -3,7 +3,7 @@ import CSSModules from 'react-css-modules';
 
 import { Link } from 'react-router-dom';
 // import Card from "Blocks/Card/index.jsx";
-import { FaArrowLeft } from 'react-icons/fa';
+import { FaArrowLeft, FaAt, FaHashtag, FaQuestion } from 'react-icons/fa';
 
 import styles from './index.style.scss';
 
@@ -23,19 +23,23 @@ class ContactContent extends Component {
           <div styleName="inputs">
             <div styleName="left">
               <div styleName="left-container">
+                <p styleName="contact-header">tell us about yourself</p>
                 <div styleName="input">
-                  <input type="text" placeholder="email" />
+                  <span styleName="icon-container"><span styleName="icon"><FaAt /></span></span>
+                  <input type="text" />
                 </div>
                 <div styleName="input">
-                  <input type="text" placeholder="phone" />
+                  <span styleName="icon-container"><span styleName="icon"><FaHashtag /></span></span>
+                  <input type="text" />
                 </div>
                 <div styleName="input">
-                  <input type="text" placeholder="what is your idea" />
+                  <span styleName="icon-container"><span styleName="icon"><FaQuestion /></span></span>
+                  <input type="text" />
                 </div>
               </div>
             </div>
             <div styleName="right">
-              <div styleName="message" contenteditable="true">
+              <div styleName="message" contentEditable="true">
                 <p styleName="text">send us a message...</p>
               </div>
             </div>
