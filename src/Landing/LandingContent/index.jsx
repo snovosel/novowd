@@ -20,7 +20,9 @@ const menuOptions = [
   {
     title: 'Projects',
     Icon: ({color}) => <FaCode size="130" color={color} />,
-    path: '/projects'
+    // path: '/projects'
+    path: 'www.github.com',
+    external: true,
   },
   {
     title: 'Contact',
@@ -40,6 +42,7 @@ class LandingContent extends Component {
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
     this.renderIcon = this.renderIcon.bind(this);
+    this.renderNormal = this.renderNormal.bind(this);
   }
 
   handleMouseEnter(title) {
@@ -60,6 +63,32 @@ class LandingContent extends Component {
     );
   }
 
+  renderExternal({ Icon, title, path, externalUrl }) {
+    return (
+      <a href={'https://www.github.com/snovosel'} >
+        <Card
+          title={title}
+          color={this.state.id === title ? 'white' : '#e5fff9'}
+        >
+          {this.renderIcon(Icon, title)}
+        </Card>
+      </a>
+    );
+  }
+
+  renderNormal({ Icon, title, path }) {
+    return (
+      <Link to={path}>
+        <Card
+          title={title}
+          color={this.state.id === title ? 'white' : '#e5fff9'}
+        >
+          {this.renderIcon(Icon, title)}
+        </Card>
+      </Link>
+    );
+  }
+
   render() {
     return (
       <div styleName="landing-content-container">
@@ -68,16 +97,9 @@ class LandingContent extends Component {
         </div>
         <div styleName="buffer" />
         <div styleName="menu-options">
-          {menuOptions.map(({ Icon, title, path }) => (
-            <div key={title} styleName={`menu-item`} onMouseEnter={() => this.handleMouseEnter(title)} onMouseLeave={() => {this.handleMouseLeave()}}>
-              <Link to={path}>
-                <Card
-                  title={title}
-                  color={this.state.id === title ? 'white' : '#e5fff9'}
-                >
-                  {this.renderIcon(Icon, title)}
-                </Card>
-              </Link>
+          {menuOptions.map((option) => (
+            <div key={option.title} styleName={`menu-item`} onMouseEnter={() => this.handleMouseEnter(option.title)} onMouseLeave={() => {this.handleMouseLeave()}}>
+              {option.external === true ? this.renderExternal(option) : this.renderNormal(option)}
             </div>
           ))}
         </div>
