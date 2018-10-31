@@ -5,12 +5,27 @@ import styles from './index.style.scss';
 
 class InputText extends Component {
   render() {
-    const { placeholder } = this.props;
+    const { placeholder, Icon } = this.props;
+
+    if (Icon) {
+      return (
+        <div styleName="input">
+          <span styleName="icon-container"><span styleName="icon"><Icon /></span></span>
+          <input type="text" />
+        </div>
+      );
+    }
 
     return (
-      <input placeholder={placeholder} styleName="input-text" />
+      <div styleName="input">
+        <input type="text" />
+      </div>
     );
   }
+}
+
+InputText.defaultProps = {
+  placeholder: ""
 }
 
 const InputTextStyled = CSSModules(InputText, styles, {

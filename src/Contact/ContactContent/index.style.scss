@@ -65,115 +65,25 @@
 
         @include make_flex(row, flex-start, stretch);
 
-        .left {
-          flex: 4;
-          @include make_flex(column, center, flex-start);
+        .left-container {
+          height: 80%;
+          width: 100%;
 
-          .left-container {
-            height: 80%;
+          @include make_flex(column, center, center);
+          border-right: 0.5px solid #52a1ad;
+
+          .contact-header {
+            font-size: 24px;
             width: 100%;
+            flex: 1;
 
             @include make_flex(column, center, center);
-            border-right: 0.5px solid #52a1ad;
+          }
 
-            .contact-header {
-              font-size: 24px;
-              width: 100%;
-              flex: 1;
-
-              @include make_flex(column, center, center);
-            }
-
-            .input-container {
-              @include make_flex(column, space-evenly, center);
-              width: 100%;
-              flex: 2;
-
-              .input {
-                width: 75%;
-                height: 20%;
-                overflow: hidden;
-
-                @include make_flex(row, flex-start, center);
-
-                .icon-container {
-                  height: 100%;
-                  background-color: #52a1ad;
-                  border: 0.5px solid #63abb6;
-                  @include make_flex(column, center, center);
-
-                  .icon {
-                    @include make_flex(column, center, center);
-                    width: auto;
-                    height: 100%;
-                    padding: 10px;
-                  }
-                }
-
-                & > input {
-                  width: 100%;
-                  height: 100%;
-                  font-size: 20px;
-                  padding-left: 20px;
-                  border-radius: 3px;
-                  display: block;
-
-                  background-color: #52a1ad;
-                  border: 0.5px solid #63abb6;
-                  color: white;
-                  font-family: 'K2D', sans-serif;
-
-                  &:focus {
-                    outline: none;
-                  }
-
-                  &::placeholder {
-                    color: #FFFAFA;
-                  }
-
-                  &::-webkit-input-placeholder {
-                    color: #FFFAFA;
-                  }
-                  &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-                    color: #FFFAFA;
-                    opacity:  1;
-                  }
-                  &::-moz-placeholder { /* Mozilla Firefox 19+ */
-                    color: #FFFAFA;
-                    opacity:  1;
-                  }
-                  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
-                    color: #FFFAFA;
-                  }
-                  &::-ms-input-placeholder { /* Microsoft Edge */
-                    color: #FFFAFA;
-                  }
-
-                  &::placeholder { /* Most modern browsers support this now. */
-                    color: #FFFAFA;
-                  }
-                }
-
-                .select {
-                  width: 100%;
-                  height: 100%;
-                  font-size: 20px;
-                  padding-left: 20px;
-                  border-radius: 3px;
-                  display: block;
-
-                  background-color: #52a1ad;
-                  color: white;
-                  border: 0.5px solid #63abb6;
-                  font-family: 'K2D', sans-serif;
-
-                  .option {
-                    color: white;
-                    @include make_flex(row, center, center);
-                  }
-                }
-              }
-            }
+          .input-container {
+            @include make_flex(column, space-evenly, center);
+            width: 100%;
+            flex: 2;
           }
         }
 

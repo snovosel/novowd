@@ -3,6 +3,9 @@ import CSSModules from 'react-css-modules';
 
 import { Link } from 'react-router-dom';
 // import Card from "Blocks/Card/index.jsx";
+import InputText from "components/Inputs/InputText/index.jsx";
+import InputSelect from "components/Inputs/InputSelect/index.jsx";
+import FlexLayout from "components/Layout/FlexLayout/index.jsx";
 import { FaArrowLeft, FaAt, FaHashtag, FaQuestion , FaChessPawn } from 'react-icons/fa';
 
 import styles from './index.style.scss';
@@ -24,38 +27,24 @@ class ContactContent extends Component {
         <div styleName="bottom">
           <div styleName="form">
             <div styleName="inputs">
-              <div styleName="left">
+              <FlexLayout orientation="center">
                 <div styleName="left-container">
                   <div styleName="contact-header"><p>tell us about yourself</p></div>
                   <div styleName="input-container">
-                    <div styleName="input">
-                      <span styleName="icon-container"><span styleName="icon"><FaAt /></span></span>
-                      <input type="text" />
-                    </div>
-                    <div styleName="input">
-                      <span styleName="icon-container"><span styleName="icon"><FaHashtag /></span></span>
-                      <input type="text" />
-                    </div>
-                    <div styleName="input">
-                      <span styleName="icon-container"><span styleName="icon"><FaQuestion /></span></span>
-                      <select styleName="select">
-                        <option disabled selected value hidden />
-                        <option styleName="option" disabled value>I want to...</option>
-                        <option styleName="option" value="learn">learn</option>
-                        <option styleName="option" value="learn">win</option>
-                      </select>
-                    </div>
+                    <InputText Icon={FaAt} />
+                    <InputText Icon={FaHashtag} />
+                    <InputSelect options={["win", "learn"]} Icon={FaQuestion} />
                   </div>
                 </div>
-              </div>
-              <div styleName="right">
+              </FlexLayout>
+              <FlexLayout orientation="column">
                 <div styleName="right-container">
                   <div styleName="message-header"><p>send a message...</p></div>
                   <div styleName="message-container">
                     <div styleName="message" contentEditable="true" />
                   </div>
                 </div>
-              </div>
+              </FlexLayout>
             </div>
             <button styleName="submit">
               <p>submit</p>
@@ -67,6 +56,18 @@ class ContactContent extends Component {
     );
   }
 }
+
+// <div styleName="input">
+//   <span styleName="icon-container"><span styleName="icon"><FaHashtag /></span></span>
+//   <input type="text" />
+// </div>
+
+// <div styleName="left">
+//
+// </div>
+
+
+
 
 
 const ContactContentStyled = CSSModules(ContactContent, styles, {
