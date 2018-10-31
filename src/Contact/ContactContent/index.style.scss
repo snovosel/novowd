@@ -169,6 +169,7 @@
 
                   .option {
                     color: white;
+                    @include make_flex(row, center, center);
                   }
                 }
               }

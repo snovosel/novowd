@@ -3,7 +3,7 @@ import CSSModules from 'react-css-modules';
 
 import { Link } from 'react-router-dom';
 // import Card from "Blocks/Card/index.jsx";
-import { FaArrowLeft, FaAt, FaHashtag, FaQuestion } from 'react-icons/fa';
+import { FaArrowLeft, FaAt, FaHashtag, FaQuestion , FaChessPawn } from 'react-icons/fa';
 
 import styles from './index.style.scss';
 
@@ -39,9 +39,10 @@ class ContactContent extends Component {
                     <div styleName="input">
                       <span styleName="icon-container"><span styleName="icon"><FaQuestion /></span></span>
                       <select styleName="select">
-                        <option styleName="option" disabled selected value />
-                        <option styleName="option" value="I have an idea">I have an idea</option>
-                        <option styleName="option" value="I want to learn how to code">I want to learn how to code</option>
+                        <option disabled selected value hidden />
+                        <option styleName="option" disabled value>I want to...</option>
+                        <option styleName="option" value="learn">learn</option>
+                        <option styleName="option" value="learn">win</option>
                       </select>
                     </div>
                   </div>
