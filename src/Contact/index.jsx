@@ -3,7 +3,7 @@ import CSSModules from 'react-css-modules';
 
 import ContactContent from "./ContactContent/index.jsx";
 
-import Header from "Layout/Header/index.jsx";
+import MajorHeader from "Layout/MajorHeader/index.jsx";
 
 import styles from "./index.style.scss";
 
@@ -11,7 +11,7 @@ export class Contact extends Component {
   render() {
     return (
       <div styleName="contact">
-        <Header title="Contact" />
+        <MajorHeader >Contact</MajorHeader>
         <ContactContent />
       </div>
     );

@@ -1,0 +1,40 @@
+@import 'src/styles/mixins.scss';
+@import 'src/styles/variables.scss';
+
+.half {
+  &-horizontal {
+    width: 100%;
+    @include make_flex(row, center, center);
+  }
+  &-vertical {
+    width: 100%;
+    @include make_flex(column, center, center);
+  }
+}
+
+.third {
+  &-horizontal {
+    @include make_flex(row, center, center);
+    &:first-child {
+      flex: 1;
+    }
+    &:last-child {
+      flex: 5;
+    }
+  }
+  &-vertical {
+    @include make_flex(row, center, center);
+    &:first-child {
+      flex: 1;
+    }
+    &:last-child {
+      flex: 5;
+    }
+  }
+}
+
+.center {
+  width: 100%;
+  height: 100%;
+  @include make_flex(column, center, center);
+}

@@ -4,8 +4,28 @@ import CSSModules from 'react-css-modules';
 import styles from './index.style.scss';
 
 class InputSelect extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      value: null,
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange({ target: { value } }) {
+    const { onChange, name } = this.props;
+
+    this.setState({
+      value
+    });
+
+    onChange(name, value);
+  }
+
   render() {
-    const { Icon, options} = this.props;
+    const { Icon, options, value } = this.props;
 
     if (Icon) {
       return (
@@ -13,8 +33,8 @@ class InputSelect extends Component {
           <span styleName="icon-container">
             <span styleName="icon"><Icon/></span>
           </span>
-          <select styleName="select">
-            <option disabled="disabled" selected default="default" value="value" hidden />
+          <select styleName="select" value={this.state.value || ''} onChange={value => this.handleChange(value)}>
+            <option value=''></option>
             <option styleName="option" disabled="disabled" value="value" >I want to...</option>
             {options.map(item => (
               <option styleName="option" key={item} value={item}>{item}</option>
@@ -26,8 +46,8 @@ class InputSelect extends Component {
 
     return (
       <div styleName="input">
-        <select styleName="select">
-          <option disabled="disabled" selected default="default" value="value" hidden/>
+        <select styleName="select" value={this.state.value || ''} onChange={value => this.handleChange(value)}>
+          <option value=''></option>
           <option styleName="option" disabled="disabled" value="value" >I want to...</option>
           {options.map(item => (
             <option styleName="option" key={item} value={item}>{item}</option>
@@ -36,10 +56,12 @@ class InputSelect extends Component {
       </div>
     );
   }
+
 }
 
 InputSelect.defaultProps = {
-  placeholder: ""
+  placeholder: "",
+  value: "",
 }
 
 const InputSelectStyled = CSSModules(InputSelect, styles, {allowMultiple: true});

@@ -5,9 +5,10 @@ import styles from './index.style.scss';
 
 class InputTextArea extends Component {
   render() {
-    const { placeholder } = this.props;
     return (
-      <textarea styleName="text-area" placeholder={placeholder} />
+      <div styleName="message-container">
+        <div styleName="message" contentEditable="true" />
+      </div>
     );
   }
 }
