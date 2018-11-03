@@ -29,7 +29,7 @@ class ContactInfo extends Component {
   render() {
     return (
       <div styleName="input-container">
-        <InputText Icon={FaAt} value={this.state.email} name="email" onChange={this.handleChange}  />
+        <InputText Icon={FaAt} value={this.state.email} name="email" onChange={this.props.onChange}  />
         <InputText Icon={FaHashtag} value={this.state.phone} name="phone" onChange={this.handleChange} />
         <InputSelect options={["win", "learn"]} Icon={FaQuestion} name="strategy" value={this.state.strategy} onChange={this.handleChange} />
       </div>

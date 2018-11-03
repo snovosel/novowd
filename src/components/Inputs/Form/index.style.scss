@@ -1,0 +1,9 @@
+@import 'src/styles/mixins.scss';
+@import 'src/styles/variables.scss';
+
+.form-container {
+  height: 100%;
+  width: 100%;
+
+  @include make_flex(column, center, center);
+}

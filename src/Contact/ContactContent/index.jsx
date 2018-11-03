@@ -1,11 +1,11 @@
-import React, {Component, Fragment} from 'react';
+import React, {Component} from 'react';
 import CSSModules from 'react-css-modules';
 import * as emailjs from 'emailjs-com';
 
-import ContactForm from "../ContactForm/index.jsx";
 import StandardContent from "components/Layout/StandardContent/index.jsx";
-import MiniHeader from "components/Layout/MiniHeader/index.jsx";
-import BackButton from "components/Navigation/BackButton/index.jsx";
+import NavHeader from "components/Navigation/NavHeader/index.jsx";
+import Form from "components/Inputs/Form/index.jsx";
+import ContactForm from "../ContactForm/index.jsx";
 
 import styles from './index.style.scss';
 
@@ -36,14 +36,15 @@ class ContactContent extends Component {
     return (
       <StandardContent
         header={() => (
-          <Fragment>
-            <BackButton />
-            <MiniHeader>
-              send me a message, ask a question, or find out more about what I can offer you and your <b>ideas</b>.
-            </MiniHeader>
-          </Fragment>
+          <NavHeader copy="send me a message, ask a question, or find out more about what I can offer you and your ideas." />
         )}
-        content={() => <ContactForm onSubmit={this.handleSubmit} />}
+        content={() => (
+          <Form>
+            {({ formMethods }) => (
+              <ContactForm {...formMethods} />
+            )}
+          </Form>
+        )}
       />
     );
   }
