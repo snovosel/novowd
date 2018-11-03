@@ -25,7 +25,7 @@ class InputSelect extends Component {
   }
 
   render() {
-    const { Icon, options, value } = this.props;
+    const { Icon, options } = this.props;
 
     if (Icon) {
       return (

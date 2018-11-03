@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import CSSModules from 'react-css-modules';
 
 import styles from './index.style.scss';
@@ -15,7 +15,7 @@ const InputText = ({ Icon, name, value, onChange }) => {
 
   return (
     <div styleName="input">
-      <input type="text" onChange={name, e => onChange(name, e.target.value)} />
+      <input type="text" onChange={(name, e) => onChange(name, e.target.value)} />
     </div>
   );
 }

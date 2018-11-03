@@ -21,16 +21,12 @@ class ContactInfo extends Component {
   }
 
   handleChange(type, value) {
-    console.log('type', type);
-    console.log('value', value);
-
     this.setState({
       [type]: value
     });
   }
 
   render() {
-    console.log('this.state', this.state);
     return (
       <div styleName="input-container">
         <InputText Icon={FaAt} value={this.state.email} name="email" onChange={this.handleChange}  />
