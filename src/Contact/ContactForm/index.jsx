@@ -9,27 +9,7 @@ import InputTextArea from "components/Inputs/InputTextArea/index.jsx";
 
 import styles from './index.style.scss';
 
-// class ContactForm extends Component {
-//
-//   render() {
-//     return (
-//       <div styleName="form">
-//         <div styleName="inputs">
-//           <div styleName="left">
-//             <MajorMinor orientation="vertical-reverse" major={() => <ContactInfo onSubmit={values => this.handleSubmit(values)}/>} minor={() => <MiniHeader>tell us about yourself</MiniHeader>}/>
-//           </div>
-//           <div styleName="right">
-//             <MajorMinor orientation="vertical-reverse" major={() => <InputTextArea/>} minor={() => <MiniHeader>send a message...</MiniHeader>}/>
-//           </div>
-//         </div>
-//         <button styleName="submit">
-//           <p>submit</p>
-//         </button>
-//       </div>
-//     );
-//   }
-//
-// }
+
 // make split view for the
 const ContactForm = ({ formMethods }) => (
   <div styleName="form">
@@ -45,7 +25,7 @@ const ContactForm = ({ formMethods }) => (
       <p>submit</p>
   </button>
   </div>
-)
+);
 
 const ContactFormStyled = CSSModules(ContactForm, styles, {
   allowMultiple: true
