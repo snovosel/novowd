@@ -5,9 +5,10 @@ import styles from './index.style.scss';
 
 class InputTextArea extends Component {
   render() {
+    const { name, onChange } = this.props;
     return (
       <div styleName="message-container">
-        <div styleName="message" contentEditable="true" />
+        <textarea styleName="message" onChange={e => onChange(name, e.target.value)} />
       </div>
     );
   }

@@ -6,7 +6,6 @@
   border: 0.5px solid #86bdc6;
   height: 88%;
   width: 80%;
-  color: white;
   @include make_flex(column, flex-start, center);
 
   .inputs {

@@ -18,31 +18,24 @@ class ContactContent extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit() {
-    console.log('test');
-    // var templateParams = {
-    //   name: 'James',
-    //   notes: 'Check this out!'
-    // };
-    //
-    // emailjs.send('default_service' , "novowd", templateParams, 'user_HiT7OHmdE0PQD1vcLXya0').then(function(response) {
-    //   console.log('SUCCESS!', response.status, response.text);
-    // }, function(error) {
-    //   console.log('FAILED...', error);
-    // });
+  handleSubmit(values) {
+    console.log('values', values);
+    emailjs.send('default_service', "novowd", values, 'user_HiT7OHmdE0PQD1vcLXya0').then(function(response) {
+      console.log('SUCCESS!', response.status, response.text);
+    }, function(error) {
+      console.log('FAILED...', error);
+    });
   }
 
   render() {
     return (
       <StandardContent
         header={() => (
-          <NavHeader copy="send me a message, ask a question, or find out more about what I can offer you and your ideas." />
+          <NavHeader copy="send me a message, ask a question, or find out more about what I can offer you and your ideas."/>
         )}
         content={() => (
-          <Form>
-            {({ formMethods }) => (
-              <ContactForm {...formMethods} />
-            )}
+          <Form submit={this.handleSubmit}>
+            {(formProps) => <ContactForm {...formProps}/>}
           </Form>
         )}
       />

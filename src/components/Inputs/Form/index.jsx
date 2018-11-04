@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import CSSModules from 'react-css-modules';
 
 import styles from "./index.style.scss";
@@ -7,7 +7,9 @@ class Form extends Component {
   constructor(props) {
     super(props);
 
-    this.state  = {};
+    this.state  = {
+      formValues: {}
+    };
 
     this.getFormMethods = this.getFormMethods.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
@@ -16,23 +18,38 @@ class Form extends Component {
 
   getFormMethods() {
     return {
-      onSubmit: this.handleFormSubmit,
-      onChange: this.handleFormChange,
+      formMethods: {
+        onSubmit: this.handleFormSubmit,
+        onChange: this.handleFormChange,
+      }
     };
   }
 
-  handleFormChange(value) {
-    console.log('change', value);
+  handleFormChange(name, value) {
+    this.setState({
+      formValues: {
+        ...this.state.formValues,
+        [name]: value
+      }
+    });
   }
 
   handleFormSubmit(value) {
-    console.log('submit', value);
+    const { submit } = this.props;
+
+    if (this.props.submit) {
+      submit(this.state.formValues);
+    }
+    return this.state.formValues;
   }
 
   render() {
     return (
       <div styleName="form-container">
-        {this.props.children({...this.getFormMethods()})}
+        {this.props.children({
+          ...this.getFormMethods(),
+          ...this.state
+        })}
       </div>
     );
   }

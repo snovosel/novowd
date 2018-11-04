@@ -1,8 +1,0 @@
-@import 'src/styles/mixins.scss';
-@import 'src/styles/variables.scss';
-
-.input-container {
-  @include make_flex(column, space-evenly, center);
-  height: 100%;
-  width: 100%;
-}

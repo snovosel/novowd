@@ -1,0 +1,13 @@
+@import 'src/styles/mixins.scss';
+@import 'src/styles/variables.scss';
+
+.split {
+  &-horizontal {
+    @include make_flex(row, flex-start, center);
+    height: 100%;
+  }
+  &-vertical {
+    @include make_flex(column, flex-start, center);
+    width: 100%;
+  }
+}
