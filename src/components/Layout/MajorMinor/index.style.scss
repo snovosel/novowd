@@ -1,0 +1,73 @@
+@import 'src/styles/mixins.scss';
+@import 'src/styles/variables.scss';
+
+.container {
+  &-vertical {
+    @include make_flex(column, flex-start, flex-start);
+    height: 100%;
+    width: 100%;
+
+    & > .minor,
+    & > .major {
+      width: 100%;
+    }
+
+    & > .minor {
+      @include make_flex(column, center, center);
+      flex: 1;
+      overflow: hidden;
+    }
+
+    & > .major {
+      @include make_flex(column, center, center);
+      flex: 3;
+      overflow: hidden;
+    }
+  }
+
+  &-vertical-reverse {
+    @include make_flex(column-reverse, flex-start, flex-start);
+    height: 100%;
+    width: 100%;
+
+    & > .minor,
+    & > .major {
+      width: 100%;
+    }
+
+    & > .minor {
+      @include make_flex(column, center, center);
+      flex: 1;
+      overflow: hidden;
+    }
+
+    & > .major {
+      @include make_flex(column, center, center);
+      flex: 3;
+      overflow: hidden;
+    }
+  }
+
+  &-horizontal {
+    @include make_flex(row, flex-start, flex-start);
+    height: 100%;
+    width: 100%;
+
+    & > .minor,
+    & > .major {
+      height: 100%;
+    }
+
+    & > .minor {
+      @include make_flex(column, center, center);
+      flex: 1;
+      overflow: hidden;
+    }
+
+    & > .major {
+      @include make_flex(column, center, center);
+      flex: 3;
+      overflow: hidden;
+    }
+  }
+}

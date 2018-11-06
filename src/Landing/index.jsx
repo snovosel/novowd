@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux';
 
 import LandingContent from "./LandingContent/index.jsx";
 
-import Header from "Layout/Header/index.jsx";
+import MajorHeader from "Layout/MajorHeader/index.jsx";
 
 import styles from "./index.style.scss";
 
@@ -40,7 +40,7 @@ export class Landing extends Component {
   render() {
     return (
       <div styleName="landing">
-        <Header styleType="" title="Steve Novosel" />
+        <MajorHeader >Steve Novosel</MajorHeader>
         <LandingContent />
       </div>
     );

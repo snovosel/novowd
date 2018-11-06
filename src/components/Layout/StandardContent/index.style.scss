@@ -1,0 +1,31 @@
+@import 'src/styles/mixins.scss';
+@import 'src/styles/variables.scss';
+
+
+.container {
+  height: 100%;
+  width: 100%;
+
+  @include make_flex(column, flex-start, center);
+
+  .header {
+    flex: 2;
+    flex-shrink: 0;
+    width: 100%;
+
+    @include make_flex(column, center, center);
+  }
+
+  .content {
+    flex: 7;
+    flex-grow: 7;
+    width: 100%;
+
+    @include make_flex(column, center, center);
+  }
+
+  .footer {
+    flex: 1;
+  }
+
+}
