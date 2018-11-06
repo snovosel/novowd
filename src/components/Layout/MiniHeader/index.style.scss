@@ -8,4 +8,11 @@
   color: white;
 
   @include make_flex(column, center, center);
+
+  ::selection {
+  background: none; /* WebKit/Blink Browsers */
+  }
+  ::-moz-selection {
+    background: none; /* Gecko Browsers */
+  }
 }

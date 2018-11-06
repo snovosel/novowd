@@ -19,7 +19,6 @@ class ContactContent extends Component {
   }
 
   handleSubmit(values) {
-    console.log('values', values);
     emailjs.send('default_service', "novowd", values, 'user_HiT7OHmdE0PQD1vcLXya0').then(function(response) {
       console.log('SUCCESS!', response.status, response.text);
     }, function(error) {
