@@ -13,5 +13,9 @@
     font-size: 100px;
     align-self: center;
     text-align: center;
+
+    @media only screen and (max-width: 600px) {
+      font-size: 45px;
+    }
   }
 }
