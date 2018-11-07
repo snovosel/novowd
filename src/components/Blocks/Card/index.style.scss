@@ -38,6 +38,11 @@
   &.medium {
     height: 250px;
     width: 250px;
+
+    @media only screen and (max-width: 600px) {
+      height: 325px;
+      width: 325px;
+    }
   }
 
   &.large {
