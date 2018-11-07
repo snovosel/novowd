@@ -1,19 +1,25 @@
-import React, { Fragment } from 'react';
+import React, {Fragment} from 'react';
 import CSSModules from 'react-css-modules';
-
-import styles from './index.style.scss';
 
 import BackButton from "components/Navigation/BackButton/index.jsx";
 import MiniHeader from "components/Layout/MiniHeader/index.jsx";
 
-const NavHeader = ({ copy }) => (
+import styles from './index.style.scss';
+
+const NavHeader = ({copy}) => (
   <Fragment>
-    <BackButton />
-    <MiniHeader>
-      {copy}
-    </MiniHeader>
+    <BackButton/>
+    <div styleName="header">
+      <MiniHeader>
+        {copy}
+      </MiniHeader>
+    </div>
   </Fragment>
 );
+
+NavHeader.defaultProps = {
+  copy: ""
+};
 
 const NavHeaderStyled = CSSModules(NavHeader, styles);
 

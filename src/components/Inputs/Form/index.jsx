@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import CSSModules from 'react-css-modules';
 
 import styles from "./index.style.scss";
@@ -45,12 +45,12 @@ class Form extends Component {
 
   render() {
     return (
-      <div styleName="form-container">
+      <Fragment>
         {this.props.children({
           ...this.getFormMethods(),
           ...this.state
         })}
-      </div>
+      </Fragment>
     );
   }
 }
