@@ -1,0 +1,6 @@
+@import 'src/styles/variables.scss';
+@import 'src/styles/mixins.scss';
+
+.header {
+  @include make_flex(column, center, center);
+}

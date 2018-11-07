@@ -3,24 +3,34 @@ import CSSModules from 'react-css-modules';
 
 import styles from './index.style.scss';
 
-const StandardContent = ({ header, content, footer, extraStyles }) => (
-  <div styleName="container">
-    <div styleName="header">
-      {header()}
+const StandardContent = ({ header, content, footer, extraStyles }) => {
+
+  const renderFooter = () => {
+    if (footer) {
+      return (
+        <div styleName="footer">
+          {footer()}
+        </div>
+      );
+    }
+    return null;
+  }
+  return (
+    <div styleName="container">
+      <div styleName="header">
+        {header()}
+      </div>
+      <div styleName="content">
+        {content()}
+      </div>
+      {renderFooter()}
     </div>
-    <div styleName="content">
-      {content()}
-    </div>
-    <div styleName="footer">
-      {footer()}
-    </div>
-  </div>
-);
+  );
+};
 
 StandardContent.defaultProps = {
   header: () => (<Fragment />),
   content: () => (<Fragment />),
-  footer: () => (<Fragment />)
 }
 
 const StandardContentStyled = CSSModules(StandardContent, styles);
