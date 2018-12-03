@@ -1,6 +1,3 @@
-This is a template for a react starter project that can be used easily as the front end for restful applications.
+# NovoWD - Steve Novosel
 
-This template comes natively with the following packages:
-
-Redux
-React-router
+Personal portfolio demonstrating my ability with ReactJS and Redux
